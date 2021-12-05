@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>blog-009-21-12-5 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="移动WEB开发之流式布局1 移动端基础1.1 浏览器现状1.1.1 PC端常见浏览器360浏览器、谷歌浏览器、火狐浏览器、QQ浏览器、百度浏览器、搜狗浏览器、IE浏览器。 1.1.2 移动端常见浏览器UC浏览器, QQ浏览器,欧朋浏览器、百度手机浏览器, 360安全浏览器,谷歌浏览器,搜狗手机浏览器,猎豹浏览器,以及其他杂牌浏览器。 国内的UC和QQ ,百度等手机浏览器都是根据Webkit修改过来">
+<meta property="og:type" content="article">
+<meta property="og:title" content="blog-009-21-12-5">
+<meta property="og:url" content="http://example.com/2021/12/05/blog-009-21-12-5/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="移动WEB开发之流式布局1 移动端基础1.1 浏览器现状1.1.1 PC端常见浏览器360浏览器、谷歌浏览器、火狐浏览器、QQ浏览器、百度浏览器、搜狗浏览器、IE浏览器。 1.1.2 移动端常见浏览器UC浏览器, QQ浏览器,欧朋浏览器、百度手机浏览器, 360安全浏览器,谷歌浏览器,搜狗手机浏览器,猎豹浏览器,以及其他杂牌浏览器。 国内的UC和QQ ,百度等手机浏览器都是根据Webkit修改过来">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-12-05T12:38:16.000Z">
+<meta property="article:modified_time" content="2021-12-05T12:39:38.171Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="C3">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-blog-009-21-12-5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/12/05/blog-009-21-12-5/" class="article-date">
+  <time datetime="2021-12-05T12:38:16.000Z" itemprop="datePublished">2021-12-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      blog-009-21-12-5
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="移动WEB开发之流式布局"><a href="#移动WEB开发之流式布局" class="headerlink" title="移动WEB开发之流式布局"></a>移动WEB开发之流式布局</h1><h2 id="1-移动端基础"><a href="#1-移动端基础" class="headerlink" title="1 移动端基础"></a>1 移动端基础</h2><h3 id="1-1-浏览器现状"><a href="#1-1-浏览器现状" class="headerlink" title="1.1 浏览器现状"></a>1.1 浏览器现状</h3><h4 id="1-1-1-PC端常见浏览器"><a href="#1-1-1-PC端常见浏览器" class="headerlink" title="1.1.1 PC端常见浏览器"></a>1.1.1 PC端常见浏览器</h4><p>360浏览器、谷歌浏览器、火狐浏览器、QQ浏览器、百度浏览器、搜狗浏览器、IE浏览器。</p>
+<h4 id="1-1-2-移动端常见浏览器"><a href="#1-1-2-移动端常见浏览器" class="headerlink" title="1.1.2 移动端常见浏览器"></a>1.1.2 移动端常见浏览器</h4><p>UC浏览器, QQ浏览器,欧朋浏览器、百度手机浏览器, 360安全浏览器,谷歌浏览器,搜狗手机浏览器,猎豹浏览器,以及其他杂牌浏览器。</p>
+<p>国内的UC和QQ ,百度等手机浏览器都是根据<strong>Webkit</strong>修改过来的内核,国内尚无自主研发的内核,就像国内的手机操作系统都是基于Android修改开发的一样。</p>
+<p><strong>总结</strong>:兼容移动端主流浏览器,<strong>处理Webkit内核</strong>浏览器即可。</p>
+<h3 id="1-2-手机屏幕现状"><a href="#1-2-手机屏幕现状" class="headerlink" title="1.2 手机屏幕现状"></a>1.2 手机屏幕现状</h3><ul>
+<li>移动端设备屏幕尺寸非常多 , 碎片化严重。</li>
+<li>Android设备有多种分辨率 : 480x800, 480x854, 540x960, 720x1280 , 1080x1920等,还有传说中的2K , 4k屏。</li>
+<li>近年来iPhone的碎片化也加剧了 ,其设备的主要分辨率有: 640x960, 640x1 136, 750x1334, 1242x2208等。</li>
+<li>常用的尺寸单位是px。</li>
+</ul>
+<h3 id="1-3-常见移动端屏幕尺寸"><a href="#1-3-常见移动端屏幕尺寸" class="headerlink" title="1.3 常见移动端屏幕尺寸"></a>1.3 常见移动端屏幕尺寸</h3><table>
+<thead>
+<tr>
+<th>设备</th>
+<th>尺寸(英寸)</th>
+<th>开发尺寸(px)</th>
+<th>物理像素比(dpr)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>iphone6</td>
+<td>4.7</td>
+<td>375*667</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>Nexus 4</td>
+<td>4.7</td>
+<td>384*640</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>Nexus 5x</td>
+<td>5.2</td>
+<td>411*731</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>iphone6 Plus</td>
+<td>5.5</td>
+<td>414*736</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>Samsung Galaxy Note 4</td>
+<td>5.7</td>
+<td>480*853</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>Sony Xperia Z Ultra</td>
+<td>6.4</td>
+<td>540*960</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>Nexus 7(“12)</td>
+<td>7.0</td>
+<td>600*960</td>
+<td>1.3</td>
+</tr>
+<tr>
+<td>iPad Mini</td>
+<td>7.9</td>
+<td>768*1024</td>
+<td>1.0</td>
+</tr>
+</tbody></table>
+<h3 id="1-4-移动端调试方法"><a href="#1-4-移动端调试方法" class="headerlink" title="1.4 移动端调试方法"></a>1.4 移动端调试方法</h3><ul>
+<li>Chrome DevTools (谷歌浏览器)的模拟手机调试</li>
+<li>搭建本地web服务器 ,手机和服务器个局域网内 ,通过手机访问服务器</li>
+<li>使用外网服务器 ,直接IP或域名访问</li>
+</ul>
+<p><strong>总结</strong></p>
+<ul>
+<li>移动端浏览器我们主要对webkit内核进行兼容</li>
+<li>我们现在开发的移动端主要针对手机端开发</li>
+<li>现在移动端碎片化比较严重 ,分辨率和屏幕尺寸大不一</li>
+<li>学会用谷歌浏览器模拟手机界面以及调试</li>
+</ul>
+<h2 id="2-视口"><a href="#2-视口" class="headerlink" title="2 视口"></a>2 视口</h2><p>视口 (viewport) 就是浏览器显示页面内容的屏幕区域。视口可以分为布局视口、视觉视口和理想视口</p>
+<h3 id="2-1-布局视口-layout-viewport"><a href="#2-1-布局视口-layout-viewport" class="headerlink" title="2.1 布局视口 layout viewport"></a>2.1 布局视口 layout viewport</h3><ul>
+<li>一般移动设备的浏览器都默认设置了一个布局视口,用于解决早期的PC端页面在手机上显示的问题。</li>
+<li>ios, Android基本都将这个视口分辨率设置为980px ,所以PC上的网页大多都能在手机上呈现,不过元素看上去很小，一般默认可以通过手动缩放网页。</li>
+</ul>
+<h3 id="2-2-视觉视口-visual-viewport"><a href="#2-2-视觉视口-visual-viewport" class="headerlink" title="2.2 视觉视口 visual viewport"></a>2.2 视觉视口 visual viewport</h3><ul>
+<li>字面意思,它是用户正在看到的网站的区域。<em>注意:是网站的区域。</em></li>
+<li>我们可以通过缩放去操作视觉视口 ,但不会影响布局视口,布局视口仍保持原来的宽度。</li>
+</ul>
+<h3 id="2-3-理想视口-ideal-viewport"><a href="#2-3-理想视口-ideal-viewport" class="headerlink" title="2.3 理想视口 ideal viewport"></a>2.3 理想视口 ideal viewport</h3><ul>
+<li>为了使网站在移动端有最理想的浏览和阅读宽度而设定</li>
+<li>理想视口,对设备来讲，是最理想的视口尺寸</li>
+<li>需要手动添写meta视口标签通知浏览器操作</li>
+<li>meta视口标签的主要目的 :布局视口的宽度应该与理想视口的宽度-致,简单理解就是设备有多宽,布局的视口就多宽</li>
+</ul>
+<h3 id="2-4-总结"><a href="#2-4-总结" class="headerlink" title="2.4 总结"></a>2.4 总结</h3><ul>
+<li>视口就是浏览器显示页面内容的屏幕区域</li>
+<li>视口分为<em>布局视口</em>、<em>视觉视口</em>和<strong>理想视口</strong></li>
+<li>移动端布局想要的是理想视口就是手机屏幕有多宽 ,我们的布局视口就有多宽</li>
+<li>想要理想视口 ,我们需要给我们的移动端页面添加meta视口标签</li>
+</ul>
+<h3 id="2-5-meta-视口标签"><a href="#2-5-meta-视口标签" class="headerlink" title="2.5 meta 视口标签"></a>2.5 meta 视口标签</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; <span class="attribute">content</span>= &quot;<span class="attribute">width</span>=device-<span class="attribute">width</span>, user-scalable=no,<span class="attribute">initial</span>-scale=<span class="number">1.0</span>, maximum-scale=<span class="number">1.0</span>, minimum-scle=<span class="number">1</span>. <span class="number">0</span>&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>解释说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>width</td>
+<td>宽度设置的是viewport宽度,可以设置device width特殊值</td>
+</tr>
+<tr>
+<td>initial-scale</td>
+<td>初始缩放比，大于0的数字</td>
+</tr>
+<tr>
+<td>maximum-scale</td>
+<td>最大缩放比,大于0的数字</td>
+</tr>
+<tr>
+<td>minimum-scale</td>
+<td>最小缩放比，大于0的数字</td>
+</tr>
+<tr>
+<td>user-scalable</td>
+<td>用户是否可以缩放，yes或no ( 1或0 )</td>
+</tr>
+</tbody></table>
+<h3 id="2-6-标准的-viewport-设置"><a href="#2-6-标准的-viewport-设置" class="headerlink" title="2.6 标准的 viewport 设置"></a>2.6 标准的 viewport 设置</h3><ul>
+<li>视口宽度和设备保持一致</li>
+<li>视口的默认缩放比例1.0上</li>
+<li>不允许用户自行缩放</li>
+<li>最大允许的缩放比例1.0</li>
+<li>最小允许的缩放比例1.0</li>
+</ul>
+<h2 id="3-二倍图"><a href="#3-二倍图" class="headerlink" title="3 二倍图"></a>3 二倍图</h2><h3 id="3-1-物理像素-amp-物理像素比"><a href="#3-1-物理像素-amp-物理像素比" class="headerlink" title="3.1 物理像素 &amp; 物理像素比"></a>3.1 物理像素 &amp; 物理像素比</h3><ul>
+<li>物理像素点指的是 屏幕显示的最小颗粒,是物理真实存在的。这是厂商在出厂时就设置好了,比如苹果6\7\8是750* 1334</li>
+<li>我们开发时候的1px不是一定等于1个物理像素的</li>
+<li>PC端页面 , 1个px等于1个物理像素的,但是移动端就不尽相同</li>
+<li>一个px的能显示的物理像素点的个数,称为物理像素比或屏幕像素比</li>
+<li>PC端和早前的手机屏幕/普通手机屏幕: 1CSS像素= 1物理像素的</li>
+<li>Retina (视网膜屏幕)是一种显示技术,可以将把更多的物理像素点压缩至一块屏幕里，从而达到更高的分辨率,并提高屏幕显示的细腻程度。</li>
+</ul>
+<h3 id="3-2-多倍图"><a href="#3-2-多倍图" class="headerlink" title="3.2 多倍图"></a>3.2 多倍图</h3><ul>
+<li>对于一张50px* 50px的图片,在手机Retina屏中打开,按照刚才的物理像素比会放大倍数,这样会造成图片模糊</li>
+<li>在标准的viewport设置中 ,使用倍图来提高图片质量,解决在高清设备中的模糊问题</li>
+<li>通常使用二倍图 ，因为iPhone 6\7\8的影响,但是现在还存在3倍图4倍图的情况,这个看实际开发公司需求)</li>
+<li>背景图片 注意缩放问题</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*在iphone8 下面*/</span></span><br><span class="line"><span class="selector-tag">img</span>&#123;</span><br><span class="line"><span class="comment">/*原始图片100* 100px*/</span></span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br><span class="line">. box&#123;</span><br><span class="line"><span class="comment">/*原始图片100* 100px*/</span></span><br><span class="line">    <span class="attribute">background</span> size: <span class="number">50px</span> <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-背景缩放-background-size"><a href="#3-3-背景缩放-background-size" class="headerlink" title="3.3 背景缩放 background-size"></a>3.3 背景缩放 background-size</h3><p>background-size属性规定背景图像的尺寸</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">background-size</span>:背景图片宽度 背景图片高度;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>单位:长度I百分比 | cover Icontain;</li>
+<li>cover把背景图像扩展至足够大,以使背景图像完全覆盖背景区域。</li>
+<li>contain把图像图像扩展至最大尺寸,以使其宽度和高度完全适应内容区域</li>
+</ul>
+<h2 id="4-移动端开发选择"><a href="#4-移动端开发选择" class="headerlink" title="4 移动端开发选择"></a>4 移动端开发选择</h2><h3 id="4-3-响应式兼容PC移动端"><a href="#4-3-响应式兼容PC移动端" class="headerlink" title="4.3 响应式兼容PC移动端"></a>4.3 响应式兼容PC移动端</h3><p>三星电子官网: <a target="_blank" rel="noopener" href="http://www.samsung.com/cn/">www.samsung.com/cn/</a> , 通过判断屏幕宽度来改变样式,以适应不同终端。</p>
+<p>缺点:制作麻烦,需要花很大精力去调兼容性问题</p>
+<h3 id="4-4-总结"><a href="#4-4-总结" class="headerlink" title="4.4 总结"></a>4.4 总结</h3><p>现在市场常见的移动端开发有<strong>单独制作移动端页面</strong>和<strong>响应式页面</strong>两种方案现在市场主流的选择还是单独制作移动端页面</p>
+<h2 id="5-移动端技术解决方案"><a href="#5-移动端技术解决方案" class="headerlink" title="5 移动端技术解决方案"></a>5 移动端技术解决方案</h2><h3 id="5-1-移动端浏览器"><a href="#5-1-移动端浏览器" class="headerlink" title="5.1 移动端浏览器"></a>5.1 移动端浏览器</h3><p>移动端浏览器基本以webkit内核为主,因此我们就考虑webkit兼容性问题。我们可以放心使用H5标签和CSS3样式。</p>
+<p>同时我们浏临器的私有前缀我们只需要考虑添加webkit即可</p>
+<h3 id="5-2-CSS-初始化-normalize-css"><a href="#5-2-CSS-初始化-normalize-css" class="headerlink" title="5.2  CSS 初始化 normalize.css"></a>5.2  CSS 初始化 normalize.css</h3><ul>
+<li>Normalize.css :保护了有价值的默认值</li>
+<li>Normalize.css :修复了浏览器的bug</li>
+<li>Normalize.css :是模块化的</li>
+<li>Normalize.css :拥有详细的文档</li>
+</ul>
+<p>官网地址: <a target="_blank" rel="noopener" href="http://necolas.qithub.io/normalize.cs/">http://necolas.qithub.io/normalize.cs/</a></p>
+<h3 id="5-3-CSS3-盒子模型-box-sizing"><a href="#5-3-CSS3-盒子模型-box-sizing" class="headerlink" title="5.3 CSS3 盒子模型 box-sizing"></a>5.3 CSS3 盒子模型 box-sizing</h3><ul>
+<li>传统模式宽度计算: 盒子的宽度 = CSS中设置的 width + border + padding</li>
+</ul>
+<ul>
+<li>CSS3盒子模型: 盒子的宽度 = CSS 中设置的宽度 width 里面包含了 border 和 padding 也就是说,我们的 CSS3 中的盒子模型, padding 和 border 不会撑大盒子</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*Css3盒子模型*/</span></span><br><span class="line"><span class="attribute">box-sizing</span>: border -box;</span><br><span class="line"><span class="comment">/*传统盒子模型*/</span></span><br><span class="line"><span class="attribute">box-sizing</span>: content-box;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>移动端可以全部 CSS3 盒子模型</li>
+<li>PC端如果完全需要兼容 ,我们就用传统模式,如果不考虑兼容性, 我们就选择 CSS3 盒子模型</li>
+</ul>
+<h3 id="5-4-特殊样式"><a href="#5-4-特殊样式" class="headerlink" title="5.4 特殊样式"></a>5.4 特殊样式</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*CSS3盒子模型*/</span></span><br><span class="line"><span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">-webkit-<span class="attribute">box-sizing</span>: border-box;</span><br><span class="line"><span class="comment">/*点击高亮我们需要清除清除设 置为transparent完成透明*/</span></span><br><span class="line">-webkit-tap-highlight-<span class="attribute">color</span>: transparent;</span><br><span class="line"><span class="comment">/*在移动端浏览器默认的外观在ios.上加上这个属性才能给按钮和输入框自定义样式*/</span></span><br><span class="line">-webkit-appearance: none;</span><br><span class="line"><span class="comment">/*禁用长按页面时的弹出菜单*/</span></span><br><span class="line"><span class="selector-tag">img</span>,</span><br><span class="line"><span class="selector-tag">a</span> </span><br><span class="line">&#123; </span><br><span class="line">    -webkit-touch-callout: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-移动端常见布局"><a href="#6-移动端常见布局" class="headerlink" title="6 移动端常见布局"></a>6 移动端常见布局</h2><p>移动端技术选型</p>
+<p>移动端布局和PC端有区别:</p>
+<ol>
+<li><p>单独制作移动端页面(主流)</p>
+<ul>
+<li>流式布局(百分比布局)</li>
+<li><strong>flex 弹性布局</strong></li>
+<li>less +rem+媒体查询布局</li>
+<li>混合布局</li>
+</ul>
+</li>
+<li><p>2.响应式页面兼容移动端(其次)</p>
+<ul>
+<li>媒体查询</li>
+<li>bootstarp</li>
+</ul>
+</li>
+</ol>
+<h3 id="6-1-流式布局-百分比布局"><a href="#6-1-流式布局-百分比布局" class="headerlink" title="6.1 流式布局(百分比布局)"></a>6.1 流式布局(百分比布局)</h3><ul>
+<li>流式布局,就是百分比布局,也称非固定像素布局。</li>
+<li>通过盒子的宽度设置成百分比来根据屏幕的宽度来进行伸缩 ,<strong>不受固定像素的限制</strong>,内容向两侧填充。</li>
+<li>流式布局方式是移动web开发使用的比较常见的布周方式。</li>
+<li>max-width 最大宽度( max-height最大高度)</li>
+<li>min-width 最小宽度 ( min-height最小高度)</li>
+</ul>
+<hr>
+<h3 id="1-设置视口标签以及引入初始化样式"><a href="#1-设置视口标签以及引入初始化样式" class="headerlink" title="1 设置视口标签以及引入初始化样式"></a>1 设置视口标签以及引入初始化样式</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; <span class="attribute">content</span> = &quot;<span class="attribute">width</span>=device <span class="attribute">width</span>, user- scalable=no,<span class="attribute">initial</span>-scale =<span class="number">1.0</span>, maximum-scale=<span class="number">1.0</span>, minimum-scale=<span class="number">1</span>. <span class="number">0</span>&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/normalize<span class="selector-class">.css</span>&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;css/ index<span class="selector-class">.css</span>&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-二倍精灵图做法"><a href="#2-二倍精灵图做法" class="headerlink" title="2 二倍精灵图做法"></a>2 二倍精灵图做法</h3><ul>
+<li>在firework里面把精灵图等比例缩放为原来的一半</li>
+<li>之后根据大小测量坐标</li>
+<li><strong>注意代码里面 background-size 也要写</strong> :精灵图原来宽度的一半</li>
+</ul>
+<h3 id="3-图片格式"><a href="#3-图片格式" class="headerlink" title="3 图片格式"></a>3 图片格式</h3><h4 id="DPG-图片压缩技术"><a href="#DPG-图片压缩技术" class="headerlink" title="DPG 图片压缩技术"></a>DPG 图片压缩技术</h4><p>京东自主研发推出 DPG 图片压缩技术，经测试该技术，可直接节省用户近50%的浏览流量，极大的提升了用户的网页打开速度。能够兼容 jpeg ，实现全平台、全部浏览器的兼容支持，经过内部和外部上万张图片的人眼浏览测试后发现，压缩后的图片和 webp 的清晰度对比没有差距。</p>
+<h4 id="webp-图片格式"><a href="#webp-图片格式" class="headerlink" title="webp 图片格式"></a>webp 图片格式</h4><p>谷歌开发的一种旨在加快图片加载速度的图片格式。图片压缩体积大约只有 JPEG 的2/3，并能节省大量的服务器宽带资源和数据空间。</p>
+<h1 id="移动WEB开发之-flex-布局"><a href="#移动WEB开发之-flex-布局" class="headerlink" title="移动WEB开发之 flex 布局"></a>移动WEB开发之 flex 布局</h1><h2 id="1-flex-布局"><a href="#1-flex-布局" class="headerlink" title="1 flex 布局"></a>1 flex 布局</h2><h3 id="1-1-传统布局与-flex-布局"><a href="#1-1-传统布局与-flex-布局" class="headerlink" title="1.1 传统布局与 flex 布局"></a>1.1 传统布局与 flex 布局</h3><table>
+<thead>
+<tr>
+<th>传统布局</th>
+<th>flex弹性布局</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>兼容性好</td>
+<td>操作方便 ,布局极为简单,移动端应用很广泛</td>
+</tr>
+<tr>
+<td>布局繁琐</td>
+<td>PC端浏览器支持情况较差</td>
+</tr>
+<tr>
+<td>局限性,不能在移动端很好的布局</td>
+<td>IE 11或更低版本,不支持或仅部分支持</td>
+</tr>
+</tbody></table>
+<ol>
+<li>如果是 PC 端页面布局,传统布局。</li>
+<li>如果是移动端或者不考虑兼容性问题的 PC 端页面布局,使用 flex 弹性布局</li>
+</ol>
+<h2 id="2-flex-布局原理"><a href="#2-flex-布局原理" class="headerlink" title="2 flex 布局原理"></a>2 flex 布局原理</h2><h3 id="2-1-布局原理"><a href="#2-1-布局原理" class="headerlink" title="2.1 布局原理"></a>2.1 布局原理</h3><p>flex 是 flexible Box 的缩写,意为”弹性布局” ,用来为盒状模型提供最大的灵活性,任何一个容器都可以指定为 flex 布局.</p>
+<ul>
+<li>当我们为父盒子设为 flex 布局以后,元素的 float. clear 和 vertical-align 属性将失效。</li>
+<li>伸缩布局 = 弹性布局 = 伸缩盒布局 = 弹性盒布局 = flex布局</li>
+</ul>
+<p>采用 Flex 布局的元素,称为 Flex 容器( flex container ) , 简称”容器”。它的所有子元素自动成为容器成员,称为 Flex 项目( flex item) , 简称”项目”。</p>
+<p><strong>总结</strong></p>
+<p>通过给父盒子添加 flex 属性,来控制子盒子的位置和排列方式</p>
+<h3 id="3-flex布局父项常见属性"><a href="#3-flex布局父项常见属性" class="headerlink" title="3 flex布局父项常见属性"></a>3 flex布局父项常见属性</h3><h3 id="3-1-常见父项属性"><a href="#3-1-常见父项属性" class="headerlink" title="3.1 常见父项属性"></a>3.1 常见父项属性</h3><p>以下由6个属性是对父元素设置的</p>
+<ul>
+<li>flex- direction :设置主轴的方向</li>
+<li>justify-content :设置生轴上的子元素排列方式</li>
+<li>flex-wrap :设置子元素是否换行</li>
+<li>align-content :设置侧轴上的子元素的排列方式(多行)</li>
+<li>align-items :设置侧轴上的子元素排列方式(单行)</li>
+<li>flex-flow :复合属性,相当于同时设置了 flex- direction 和 flex- wrap</li>
+</ul>
+<h3 id="3-2-flex-direction-设置主轴的方向★"><a href="#3-2-flex-direction-设置主轴的方向★" class="headerlink" title="3.2 flex-direction 设置主轴的方向★"></a>3.2 flex-direction 设置主轴的方向★</h3><h4 id="3-2-1-主轴与侧轴"><a href="#3-2-1-主轴与侧轴" class="headerlink" title="3.2.1 主轴与侧轴"></a>3.2.1 主轴与侧轴</h4><p>在 flex 布局中,是分为主轴和侧轴两个方向，同样的叫法有:行和列、x轴和y轴</p>
+<ul>
+<li>默认主轴方向就是 x 轴方向,水平向右</li>
+<li>默认侧轴方向就是 y 轴方向,水平向下</li>
+</ul>
+<h4 id="3-2-2-属性值"><a href="#3-2-2-属性值" class="headerlink" title="3.2.2 属性值"></a>3.2.2 属性值</h4><p>flex-direction 属性决定主轴的方向(即项目的排列方向)</p>
+<p>注意:主轴和侧轴是会变化的,就看 flex-direction 设置谁为主轴,剩下的就是侧轴。<strong>子元素是跟着主轴来排列的</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>row</td>
+<td>默认值从左到右</td>
+</tr>
+<tr>
+<td>row-reverse</td>
+<td>从右到左</td>
+</tr>
+<tr>
+<td>column</td>
+<td>从上到下</td>
+</tr>
+<tr>
+<td>column-reverse</td>
+<td>从下到上</td>
+</tr>
+</tbody></table>
+<h3 id="3-3-justify-content-设置主轴上的子元素排列方式★"><a href="#3-3-justify-content-设置主轴上的子元素排列方式★" class="headerlink" title="3.3  justify-content 设置主轴上的子元素排列方式★"></a>3.3  justify-content 设置主轴上的子元素排列方式★</h3><p>justify-content 属性定义了项目在主轴上的对齐方式</p>
+<p>注意:<strong>使用这个属性之前一定要确定好主轴是哪个</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>flex-start</strong></td>
+<td><strong>默认值 从头部开始，如果主轴是 x 轴，则从左到右</strong></td>
+</tr>
+<tr>
+<td>flex- end</td>
+<td>从尾部开始排列</td>
+</tr>
+<tr>
+<td><strong>center</strong></td>
+<td><strong>在主轴居中对齐（如果主轴是 x 轴，则水平居中）</strong></td>
+</tr>
+<tr>
+<td><strong>space-around</strong></td>
+<td><strong>平分剩余空间</strong></td>
+</tr>
+<tr>
+<td><strong>space-between</strong></td>
+<td><strong>先两边贴边 再平分剩余空间</strong></td>
+</tr>
+</tbody></table>
+<h3 id="3-4-flex-wrap-设置子元素是否换行★"><a href="#3-4-flex-wrap-设置子元素是否换行★" class="headerlink" title="3.4 flex-wrap 设置子元素是否换行★"></a>3.4 flex-wrap 设置子元素是否换行★</h3><table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nowrap</td>
+<td>默认值，不换行</td>
+</tr>
+<tr>
+<td><strong>wrap</strong></td>
+<td><strong>换行</strong></td>
+</tr>
+</tbody></table>
+<h3 id="3-5-align-items-设置侧轴上的子元素排列方式-单行-★"><a href="#3-5-align-items-设置侧轴上的子元素排列方式-单行-★" class="headerlink" title="3.5 align-items 设置侧轴上的子元素排列方式(单行)★"></a>3.5 align-items 设置侧轴上的子元素排列方式(单行)★</h3><p>该属性是控制子项在侧轴(默认是y轴).上的排列方式在子项为单项的时候使用</p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>flex-start</strong></td>
+<td><strong>从上到下</strong></td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>从下到上</td>
+</tr>
+<tr>
+<td><strong>center</strong></td>
+<td><strong>挤在一起居中（垂直居中）</strong></td>
+</tr>
+<tr>
+<td><strong>stretch</strong></td>
+<td><strong>拉伸（默认值）</strong></td>
+</tr>
+</tbody></table>
+<h3 id="3-6-align-content-设置侧轴上的子元素的排列方式-多行"><a href="#3-6-align-content-设置侧轴上的子元素的排列方式-多行" class="headerlink" title="3.6 align-content 设置侧轴上的子元素的排列方式(多行)"></a>3.6 align-content 设置侧轴上的子元素的排列方式(多行)</h3><p>设置子项在侧轴上的排列方式并且只能用于子项出现换行的情况(多行) , 在单行下是没有效果的。</p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>flex-start</td>
+<td>默认值在侧轴的头部开始排列</td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>在侧轴的尾部开始排列</td>
+</tr>
+<tr>
+<td>center</td>
+<td>在侧轴中间显示</td>
+</tr>
+<tr>
+<td>space - around</td>
+<td>子项在侧轴平分剩余空间</td>
+</tr>
+<tr>
+<td>space-between</td>
+<td>子项在侧轴先分布在两头，再平分剩余空间</td>
+</tr>
+<tr>
+<td>stretch</td>
+<td>设置子项元素高度平分父元素高度</td>
+</tr>
+</tbody></table>
+<h3 id="3-7-align-content-和-align-items-区别"><a href="#3-7-align-content-和-align-items-区别" class="headerlink" title="3.7 align-content 和 align-items 区别"></a>3.7 align-content 和 align-items 区别</h3><ul>
+<li>align-items 适用于单行情况下，只有上对齐、下对齐、居中和拉伸</li>
+<li>align-content 适应于换行(多行)的情况下(单行情况下无效)，可以设置上对齐、下对齐、 居中、拉伸以及平均分配剩余空间等属性值。</li>
+<li>总结就是 单行找 align-items 多行找 align-content</li>
+</ul>
+<h3 id="3-7-flex-flow"><a href="#3-7-flex-flow" class="headerlink" title="3.7 flex-flow"></a>3.7 flex-flow</h3><p>flex-flow 属性是 flex- direction 和 flex-wrap 属性的复合属性</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">flex-flow</span>:row wrap;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>flex-direction :设置主轴的方向</li>
+<li>justify- content :设置主轴上的子元素排列方式</li>
+<li>flex-wrap :设置子元素是否换行</li>
+<li>align-content :设置侧轴上的子元素的排列方式(多行)</li>
+<li>align-items :设置侧轴上的子元素排列方式(单行)</li>
+<li>flex-flow :复合属性,相当于同时设置了 flex-direction 和flex-wrap</li>
+</ul>
+<h2 id="4-flex-布局子项常见属性"><a href="#4-flex-布局子项常见属性" class="headerlink" title="4 flex 布局子项常见属性"></a>4 flex 布局子项常见属性</h2><ul>
+<li>flex子项目占的份数</li>
+<li>align-self 控制子项自己在侧轴的排列方式</li>
+<li>order属性定义子项的排列顺序 (前后顺序)</li>
+</ul>
+<h3 id="4-1-flex-属性★"><a href="#4-1-flex-属性★" class="headerlink" title="4.1 flex 属性★"></a>4.1 flex 属性★</h3><p>flex 属性定义子项目分配剩余空间,用 flex 来表示占多少份数。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">	<span class="attribute">flex</span>: &lt;number&gt;; <span class="comment">/* default 0 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-align-self-控制子项自己在侧轴上的排列方式"><a href="#4-2-align-self-控制子项自己在侧轴上的排列方式" class="headerlink" title="4.2 align-self 控制子项自己在侧轴上的排列方式"></a>4.2 align-self 控制子项自己在侧轴上的排列方式</h3><p>align-self 属性允许单个项目有与其他项目不一样的对齐方式,可覆盖 align-items 属性。默认值为 auto ,表示继承父元素的 align-items 属性,如果没有父元素,则等同于 stretch.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>) &#123;</span><br><span class="line">	<span class="comment">/*设置自己在侧轴上的排列方式*/</span></span><br><span class="line">	<span class="attribute">align-self</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-order-属性定义项目的排列顺序"><a href="#4-3-order-属性定义项目的排列顺序" class="headerlink" title="4.3 order 属性定义项目的排列顺序"></a>4.3 order 属性定义项目的排列顺序</h3><p>数值越小,排列越靠前,默认为0.注意:和 z-index 不一样。</p>
+<h3 id="背景线性渐变"><a href="#背景线性渐变" class="headerlink" title="背景线性渐变"></a>背景线性渐变</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">background</span>: linear -gradient (起始方向，颜色<span class="number">1</span>,颜色<span class="number">2</span>，...);</span><br><span class="line"><span class="attribute">background</span>: <span class="built_in">-webkit-linear-grasient</span>(left, red ，blue);</span><br><span class="line"><span class="attribute">background</span>: <span class="built_in">-webkit-linear-gradient</span>(left top, red ，blue);</span><br></pre></td></tr></table></figure>
+
+<p>背景渐变必须添加浏览器私有前缀</p>
+<p>起始方向可以是：方位名词 或者 度数，如果默认省略就是 top</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/12/05/blog-009-21-12-5/" data-id="ckwt8fbb30000dovk3vcj1t2j" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C3/" rel="tag">C3</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/11/25/blog-008-21-11-25/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">blog-008-21-11-25</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C3/" rel="tag">C3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/" rel="tag">note</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C3/" style="font-size: 20px;">C3</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/note/" style="font-size: 20px;">note</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/12/05/blog-009-21-12-5/">blog-009-21-12-5</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/25/blog-008-21-11-25/">blog-008-21-11-25</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/20/blog-007-21-11-20/">blog-007-21-11-20</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/20/asd/">asd</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/14/blog-005-21-11-14/">blog-005-21-11-14</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
