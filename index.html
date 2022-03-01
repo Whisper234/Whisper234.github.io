@@ -64,6 +64,67 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Java" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/01/Java/" class="article-date">
+  <time datetime="2022-03-01T13:22:44.000Z" itemprop="datePublished">2022-03-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/01/Java/">Java</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Java-B组"><a href="#Java-B组" class="headerlink" title="Java B组"></a>Java B组</h1><p>#算法 #蓝桥杯 #Java #真题</p>
+<h2 id="题目1-世界末日"><a href="#题目1-世界末日" class="headerlink" title="题目1:世界末日"></a>题目1:世界末日</h2><h3 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h3><p>曾有邪教称1999年12月31日是世界末日。当然该谣言已经不攻自破。还有人称今后的某个世纪末的12月31日，如果是星期一则会。。。<br>有趣的是，任何一个世纪末的年份的12月31日都不可能是星期一！！<br>于是，“谣言制造商”又修改为星期日。<br>1999年的12月31日是星期五，请问：未来哪一个离我们最近的一个世纪末年（即XX99年）的12月31日正好是星期天？请回答该年份（只填写这4位整数即可）</p>
+<h3 id="实现代码："><a href="#实现代码：" class="headerlink" title="实现代码："></a>实现代码：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calendar calendar = Calendar.getInstance();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> year = <span class="number">1999</span>; year &lt; <span class="number">10000</span>; year += <span class="number">100</span>)&#123;</span><br><span class="line">            calendar.set(Calendar.YEAR, year);</span><br><span class="line">            calendar.set(Calendar.MOUTH, <span class="number">11</span>); <span class="comment">//MOUTH从0开始计数，0为1月，对应11即12月</span></span><br><span class="line">            calendar.set(Calendar.DAY_OF_MOUTH, <span class="number">31</span>);</span><br><span class="line">            <span class="comment">//1-7 分别对应 星期日-星期六</span></span><br><span class="line">            <span class="keyword">if</span>(calendar.get(Calendar.DAY_OF_WEEK) == <span class="number">1</span>)&#123;</span><br><span class="line">                System.out.println(year);</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="实现结果："><a href="#实现结果：" class="headerlink" title="实现结果："></a>实现结果：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2299</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="题目2-马虎的算式"><a href="#题目2-马虎的算式" class="headerlink" title="题目2:马虎的算式"></a>题目2:马虎的算式</h2><h3 id="问题描述：-1"><a href="#问题描述：-1" class="headerlink" title="问题描述："></a>问题描述：</h3><p>小明是个急性子，上小学的时候经常把老师写在黑板上的题目抄错了。有一次，老师出的题目是：36 * 495 = ?<br>他却给抄成了：396 * 45 = ？<br>但是结果却很戏剧性，他的答案竟然是正确的！！！<br>因为36 * 495 = 396 * 45 = 17820。类似这样的巧合还有很多，比如：27 * 594 = 297 * 54。<br>假设a b c d e代表1～9不同的五个数字（注意数字各不相同，且不含0）能满足形如：ab * cde = adb * ce 这样的算式一共有多少种呢？<br>请你利用计算机的优势寻找所有的可能，并回答不同算式的种类数。满足乘法交换律的算式计为不同的种类，所以答案是个偶数。</p>
+<h3 id="问题分析："><a href="#问题分析：" class="headerlink" title="问题分析："></a>问题分析：</h3><p>本题属于简单题，最容易想到的即是枚举暴力。将a b c d e作为五个变量，利用循环来求出满足条件的次数，即可计算出最终的答案。</p>
+<h3 id="实现代码：-1"><a href="#实现代码：-1" class="headerlink" title="实现代码："></a>实现代码：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> counts = <span class="number">0</span>;<span class="comment">// 用于计数</span></span><br><span class="line">        <span class="comment">// 循环中要注意满足数字各不相同的条件</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> a = <span class="number">1</span>; a &lt; <span class="number">10</span>; a++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> b = <span class="number">1</span>; b &lt; <span class="number">10</span>; b++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(b!=a)<span class="keyword">for</span>(<span class="keyword">int</span> c = <span class="number">1</span>; c &lt; <span class="number">10</span>; c++)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(c!=a &amp;&amp; c!=b)<span class="keyword">for</span>(<span class="keyword">int</span> d = <span class="number">1</span>; d &lt; <span class="number">10</span>; d++)&#123;</span><br><span class="line">                        <span class="keyword">if</span>(d!=a &amp;&amp; d!=b &amp;&amp; d!=c)<span class="keyword">for</span>(<span class="keyword">int</span> e = <span class="number">1</span>; e &lt; <span class="number">10</span>; e++)&#123;</span><br><span class="line">                            <span class="keyword">if</span>(e!=a &amp;&amp; e!=b &amp;&amp; e!=c &amp;&amp; e!=d)&#123;</span><br><span class="line">                                <span class="comment">// ab * cde = adb * ce</span></span><br><span class="line">                                <span class="keyword">if</span>((a*<span class="number">10</span>+b)*(c*<span class="number">100</span>+d*<span class="number">10</span>+e) == (a*<span class="number">100</span>+d*<span class="number">10</span>+b)*(c*<span class="number">10</span>+e))&#123;</span><br><span class="line">                                    counts++;</span><br><span class="line">                                &#125;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(counts);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="实现结果：-1"><a href="#实现结果：-1" class="headerlink" title="实现结果："></a>实现结果：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">142 </span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="题目3-振兴中华"><a href="#题目3-振兴中华" class="headerlink" title="题目3:振兴中华"></a>题目3:振兴中华</h2><h3 id="问题描述：-2"><a href="#问题描述：-2" class="headerlink" title="问题描述："></a>问题描述：</h3><p>小明参加了学校的趣味运动会，其中的一个项目是：跳格子。地上画着一些格子，每个格子里写一个字，如下所示：<br>从我做起振<br>我做起振兴<br>做起振兴中<br>起振兴中华<br>比赛时，先站在左上角的写着“从”字的格子里，可以横向或纵向跳到相邻的格子里，但不能跳到对角的格子或其它位置。一直要跳到“华”字结束。要求跳过的路线刚好构成“从我做起振兴中华”这句话。<br>请你帮助小明算一算他一共有多少种可能的跳跃路线呢？<br>答案是一个整数，请通过浏览器直接提交该数字。</p>
+<h3 id="问题分析：-1"><a href="#问题分析：-1" class="headerlink" title="问题分析："></a>问题分析：</h3><p>如下图所示，可以将所有格子看成一个5 * 4的棋盘格，左上角的“从”记(0, 0)，我们暂且不考虑边界。比如，当小明位于(1, 1)时，他将有四种路线(上下左右)。分析问题我们可以很容易的发现，其实小明只能走右边或者下边，因为只有这样才有可能走出“从我做起振兴中华”这句话。即记小明坐标为(x, y)，则小明每走一步后可面临的选择只有(x+1, y)或者(x, y+1)。<br>同时我们需要考虑边界问题，即当小明的坐标值x = 4或者y = 3时，小明到达边界。因此该问题我们可以用递归解决。<br><img src="https://img-blog.csdnimg.cn/b16acb244a3d4bb888fd2d55e460dfe2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBATmV6dWtvNjI3,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
+<h3 id="实现代码：-2"><a href="#实现代码：-2" class="headerlink" title="实现代码："></a>实现代码：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(dfs(<span class="number">0</span>,<span class="number">0</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 该方法用于递归所有可能的结果</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">        <span class="comment">// 递归终止条件</span></span><br><span class="line">        <span class="keyword">if</span>(x == <span class="number">4</span> || y == <span class="number">3</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dfs(x+<span class="number">1</span>, y) + dfs(x, y+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="实现结果：-2"><a href="#实现结果：-2" class="headerlink" title="实现结果："></a>实现结果：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">35 </span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="题目4-黄金连分数"><a href="#题目4-黄金连分数" class="headerlink" title="题目4:黄金连分数"></a>题目4:黄金连分数</h2><h3 id="问题描述：-3"><a href="#问题描述：-3" class="headerlink" title="问题描述："></a>问题描述：</h3><p>黄金分割数0.61803… 是个无理数，这个常数十分重要，在许多工程问题中会出现。有时需要把这个数字求得很精确。我们如何求得黄金分割数的尽可能精确的值呢？有许多方法。<br>比较简单的一种是用连分数：<br>                1<br>黄金数 = ——————————-<br>                    1<br>            1 + ——————–<br>                        1<br>                1 + ————-<br>                        1<br>                    1 + ——-<br>                        1 + …</p>
+<p>这个连分数计算的“层数”越多，它的值越接近黄金分割数。请你利用这一特性，求出黄金分割数的足够精确值，要求四舍五入到小数点后100位。<br>小数点后3位的值为：0.618<br> 小数点后4位的值为：0.6180<br> 小数点后5位的值为：0.61803<br> 小数点后7位的值为：0.6180340 （注意尾部的0，不能忽略）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/01/Java/" data-id="cl085wr2q0000rki18pa31uuk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-blog-009-21-12-5" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/12/05/blog-009-21-12-5/" class="article-date">
@@ -1961,7 +2022,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C3/" rel="tag">C3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/" rel="tag">note</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C3/" rel="tag">C3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/" rel="tag">note</a></li></ul>
     </div>
   </div>
 
@@ -1971,7 +2032,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/C3/" style="font-size: 20px;">C3</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/note/" style="font-size: 20px;">note</a>
+      <a href="/tags/C3/" style="font-size: 20px;">C3</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/note/" style="font-size: 20px;">note</a>
     </div>
   </div>
 
@@ -1980,7 +2041,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li></ul>
     </div>
   </div>
 
@@ -1991,6 +2052,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/03/01/Java/">Java</a>
+          </li>
         
           <li>
             <a href="/2021/12/05/blog-009-21-12-5/">blog-009-21-12-5</a>
@@ -2006,10 +2071,6 @@
         
           <li>
             <a href="/2021/11/14/blog-005-21-11-14/">blog-005-21-11-14</a>
-          </li>
-        
-          <li>
-            <a href="/2021/11/07/blog-003-21-11-7/">blog_003 21-11-7</a>
           </li>
         
       </ul>
